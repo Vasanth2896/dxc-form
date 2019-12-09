@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-function App() {
+import Form from "./form"
+import SoftwareList from "./softwarelist"
+import Test from "./test"
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/form">
+            <Form />
+          </Route>
+          <Route path="/softwarelist">
+            <SoftwareList />
+          </Route>
+          <Route path="/test">
+            <Test />
+          </Route>
+        
+
+        <Route path="/">
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/form">Form</Link>
+              </li>
+              <li>
+                <Link to="/softwarelist">softwarelist</Link>
+              </li>
+              <li>
+                <Link to="/test">test</Link>
+              </li>
+            </ul>
+          </nav>
+        </Route>
+        </Switch>
+      </div >
+    </Router >
   );
 }
 
-export default App;
+

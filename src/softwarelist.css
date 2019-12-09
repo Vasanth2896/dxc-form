@@ -1,0 +1,27 @@
+#root{
+    width: 100%;
+}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+td {
+    padding: 5px;
+}
+
+tr:hover {
+    background-color: goldenrod;
+}
