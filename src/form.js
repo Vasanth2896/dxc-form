@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './form.css';
 import Form from "react-jsonschema-form";
 import axios from "axios";
@@ -58,15 +58,18 @@ const App = () => {
     return (
         <div>
             <Form schema={schema(softwares)}
-                  uiSchema={uiSchema}
-                  onChange={(e) => console.log("changed", e)}
-                  onSubmit={(e) => {
-                      const data = e.formData;
-                      axios.post(`http://localhost:3000/software_license`, {
-                          // TODO: Map the response with the table post
-                      })
-                  }}
-                  onError={() => console.log("errors")}
+                uiSchema={uiSchema}
+                onChange={(e) => console.log("changed", e)}
+                onSubmit={(e) => {
+                    const data = e.formData;
+                    axios.post(`http://localhost:3000/software_license`, {
+                        // TODO: Map the response with the table post
+                        "software_name": data.softwareName,
+                        "license": data.softwareLicense,
+                        "number_of_licenses": data.numberOfLicenses
+                    })
+                }}
+                onError={() => console.log("errors")}
             />
         </div>
     );

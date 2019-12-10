@@ -8,7 +8,8 @@ import {
 
 import Form from "./form"
 import SoftwareList from "./softwarelist"
-import Test from "./test"
+import LicensedSoftware from "./LicensedSoftware"
+
 
 export default function App() {
   return (
@@ -23,8 +24,8 @@ export default function App() {
           <Route path="/softwarelist">
             <SoftwareList />
           </Route>
-          <Route path="/test">
-            <Test />
+          <Route path="/licensedsoftware">
+            <LicensedSoftware />
           </Route>
         
 
@@ -41,7 +42,7 @@ export default function App() {
                 <Link to="/softwarelist">softwarelist</Link>
               </li>
               <li>
-                <Link to="/test">test</Link>
+                <Link to="/licensedsoftware">licensedsoftware</Link>
               </li>
             </ul>
           </nav>
